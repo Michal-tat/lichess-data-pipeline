@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS gold.opening_statistics AS SELECT
 	opening_name,
-	COUNT(id) AS games_count,
+	COUNT(*) AS games_count,
 	COUNT(CASE WHEN winner = 'black' THEN 1 END) AS black_wins,
 	COUNT(CASE WHEN winner = 'white' THEN 1 END) AS white_wins,
 	COUNT(CASE WHEN winner = 'draw' THEN 1 END) AS draws,

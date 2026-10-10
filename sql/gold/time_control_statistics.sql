@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS gold.time_control_statistics AS SELECT 
 	increment_code, 
-	COUNT(id) AS game_count, 
+	COUNT(*) AS game_count, 
 	ROUND(AVG(turns), 0) AS average_turns, 
 	COUNT(CASE WHEN victory_status = 'mate' THEN 1 END) as mates_count,
 	COUNT(CASE WHEN victory_status = 'draw' THEN 1 END) as draw_count,

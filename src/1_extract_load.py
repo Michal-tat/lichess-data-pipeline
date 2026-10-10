@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine, text
+from sqlalchemy.schema import CreateSchema
 import psycopg2
 import pandas as pd
 
@@ -17,6 +18,10 @@ with engine.connect() as con:
     print(res.fetchone())
 
 df = pd.read_csv(data_path)
+
+with engine.begin() as con:
+    con.execute(CreateSchema("bronze", if_not_exists=True))
+
 
 df.to_sql("raw_games", engine, schema="bronze", if_exists="replace", index=False)
 
