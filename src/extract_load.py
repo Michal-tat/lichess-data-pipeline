@@ -4,7 +4,7 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.schema import CreateSchema
 import pandas as pd
 
-data_path = 'data/raw/games.csv'
+data_path = 'data/games.csv'
 
 #Load variables from .env file
 load_dotenv()

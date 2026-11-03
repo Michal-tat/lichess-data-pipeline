@@ -4,7 +4,7 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.schema import CreateSchema
 import pandas as pd
 
-data_path = 'data/raw/games.csv'
+data_path = 'data/games.csv'
 data_quality_checks_query = 'sql/checks/data_quality_checks.sql'
 create_silver_table_query = 'sql/silver/create_silver_table.sql'
 insert_silver_data_query = 'sql/silver/insert_silver_data.sql'

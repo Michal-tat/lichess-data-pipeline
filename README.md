@@ -27,8 +27,7 @@ Python and pandas loads 'games.csv' file into postgres database. From now on sql
 ``` bash
 lichess-data-pipeline
 ├─ data
-│  └─ raw
-│     └─ games.csv
+│  └─ games.csv
 ├─ media
 │  ├─ architecture.png
 │  └─ result_statistics.png
@@ -83,9 +82,9 @@ Raw data loaded from the CSV without modification.
 ### Gold
 
 #### Created 3 aggregated tables ready for analysis:  
-1. [opening_statistics](sql\gold\opening_statistics.sql) - which opening has highest winrate for x?
+1. [opening_statistics](sql/gold/opening_statistics.sql) - which opening has highest winrate for x?
 2. ![result_statistics](media/result_statistics.png) - results are split into 3 for black, white and draws
-3. [time_control_statistics](sql\gold\time_control_statistics.sql) - data for analyzing everything related to time
+3. [time_control_statistics](sql/gold/time_control_statistics.sql) - data for analyzing everything related to time
 
 
 ## 7. Requirements
@@ -111,12 +110,10 @@ Raw data loaded from the CSV without modification.
 ```bash
    cp .env.example .env
 ```
-4. Download the dataset as csv, place the file in the 'data/raw/' folder and name it "games.csv". (see [Data source](#11-data-source))
 
-5. Create database in pgAdmin4. Name of database should be same as in .env file (DB_NAME=) variable.
+4. Create database in pgAdmin4. Name of database should be same as in .env file (DB_NAME=) variable.
 
-
-6. Run the pipeline:
+5. Run the pipeline:
 ```bash
    python src/extract_load.py
    python src/transform.py
