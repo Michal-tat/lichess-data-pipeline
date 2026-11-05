@@ -76,14 +76,17 @@ Raw data loaded from the CSV without modification.
 - duplicates removed,
 - [text consistency checked](sql/checks/data_quality_checks.sql).
 
-#### What I did specifically:
+#### More specifically:
 - deleted 8548 of 20058 rows (~42%) where 'created_at' equals 'last_move_at'. One of my goals in roadmap is flagging them all, because losing this much rows is a big waste of data.
+- deleted 945 repeating id's
+- converted epoch time columns to normal tim
 
 ### Gold
 
 #### Created 3 aggregated tables ready for analysis:  
 1. [opening_statistics](sql/gold/opening_statistics.sql) - which opening has highest winrate for x?
-2. ![result_statistics](media/result_statistics.png) - results are split into 3 for black, white and draws
+2. results are split into 3 for black, white and draws  
+![result_statistics](media/result_statistics.png) 
 3. [time_control_statistics](sql/gold/time_control_statistics.sql) - data for analyzing everything related to time
 
 
@@ -123,6 +126,7 @@ Raw data loaded from the CSV without modification.
 ## 9. Results
 
 #### One of gold layer tables:
+result_statistics
 ![result_statistics](media/result_statistics.png)
 
 
