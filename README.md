@@ -126,7 +126,7 @@ Raw data loaded from the CSV without modification.
 ## 9. Results
 
 #### One of gold layer tables:
-result_statistics
+result_statistics  
 ![result_statistics](media/result_statistics.png)
 
 
